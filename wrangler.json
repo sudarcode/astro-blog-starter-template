@@ -12,3 +12,12 @@
   },
   "upload_source_maps": true
 }
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "routes": [
+    {
+      "pattern": "sudarblogger.web.id",
+      "custom_domain": true
+    }
+  ]
+}
