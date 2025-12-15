@@ -12,6 +12,17 @@ export default defineConfig({
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
+      {
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "my-worker",
+  "compatibility_date": "2025-12-15",
+  "main": "src/index.ts",
+  "assets": {
+    "directory": "./public/",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
+}
     },
   }),
 });
