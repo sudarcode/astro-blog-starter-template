@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   adapter: cloudflare({
     platformProxy: {
-      enabled: false,
+      enabled: true,
       {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "my-worker",
