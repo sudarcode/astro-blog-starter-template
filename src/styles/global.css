@@ -22,6 +22,13 @@
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
+	}
+@font-face {
+	font-family: "Google Sans";
+	src: url("/fonts/google-sans.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 @font-face {
 	font-family: "Pakinsans";
@@ -44,6 +51,9 @@ body {
 	line-height: 1.7;
 }
 main {
+	font-family: "Google Sans", sans-serif;
+	margin: 0;
+	padding: 0;
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
