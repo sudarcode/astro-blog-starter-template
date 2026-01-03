@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
 ---
 
 <!doctype html>
@@ -13,14 +15,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>Halo 👋!</h1>
+			<h1>👋 Hallo!</h1>
 			<p>
-				Selamat datang di blog.sugeng.id, tempatku berbagi cerita dan ide..
+				Selamat datang di blog kang sudar, tempatku berbagi cerita dan ide..
 			</p>
-			<p>
-				Perkenalkan Nama saya sudarmanto, atau orang memanggil saya sudar saya tinggal di pelosok desa di daerah lamongan yaitu Desa Kedungmentawar Kecamatan Ngimbang, Kabupaten Lamongan. Desa saya ini terletak di perbatasan Lamongan Jombang jadi kalau mau ke mana - mana atau mau beli apa lebih cepat ke jombang daripada lamongan kota. 
-			</p>
-			
+			<h1>Tulisan Sudar</h1>
+<ul>
+  {posts.map(post => (
+    <li><a href={`/blog/${post.id}`}>{post.data.title}</a></li>
+  ))}
+</ul>
 		</main>
 		<Footer />
 	</body>
